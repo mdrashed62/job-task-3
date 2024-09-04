@@ -9,7 +9,7 @@ import {
 import { router } from './Routes/Routes';
 
 createRoot(document.getElementById('root')).render(
-  <div className='bg-[#272C30] responsive'>
+  <div className='bg-[#272C30] '>
     <StrictMode>
      <RouterProvider router={router} />
    </StrictMode>

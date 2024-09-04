@@ -10,11 +10,12 @@ const Navbar = ({ setActiveTab }) => {
 
   const navLinks = (
     <>
-      <li className="flex-1 justify-center font-semibold items-center">
+     <div className="flex justify-center items-center p-2">
+     <li className="flex-1 justify-center font-semibold items-center">
         <button
           onClick={() => handleButtonClick("aboutMe")}
           className={`${
-            activeButton === "aboutMe" ? "bg-[#2B3440] text-white" : ""
+            activeButton === "aboutMe" ? "bg-[#28292F] text-white" : "text-[#A3ADB2]"
           } px-4 py-2 rounded-lg`}
         >
           About Me
@@ -24,7 +25,7 @@ const Navbar = ({ setActiveTab }) => {
         <button
           onClick={() => handleButtonClick("experience")}
           className={`${
-            activeButton === "experience" ? "bg-[#2B3440] text-white" : ""
+            activeButton === "experience" ? "bg-[#28292F] text-white" : "text-[#A3ADB2]"
           } px-4 py-2 rounded-lg`}
         >
           Experience
@@ -34,19 +35,20 @@ const Navbar = ({ setActiveTab }) => {
         <button
           onClick={() => handleButtonClick("recommended")}
           className={`${
-            activeButton === "recommended" ? "bg-[#2B3440] text-white" : ""
+            activeButton === "recommended" ? "bg-[#28292F] text-white" : "text-[#A3ADB2]"
           } px-4 py-2 rounded-lg`}
         >
           Recommended
         </button>
       </li>
+     </div>
     </>
   );
 
   return (
     <div className=" rounded-3xl bg-[#171717] text-white mx-auto">
       <div className="flex justify-between w-full">
-        <ul className="menu menu-horizontal px-1 w-full">{navLinks}</ul>
+        <ul className="px-1 w-full">{navLinks}</ul>
       </div>
     </div>
   );

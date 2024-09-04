@@ -26,7 +26,7 @@ const PartOne = () => {
     <div className="bg-[#363C43] flex items-center rounded-2xl">
       <div className="flex w-full">
         {/* First div */}
-        <div className="flex flex-col items-center gap-[77px] w-[50px] mt-4">
+        <div className="flex flex-col items-center gap-[77px] w-[50px] mt-6">
           <div className="ml-[15px]">
           <svg width=" 2em" height="2em">
             <defs>
@@ -50,7 +50,7 @@ const PartOne = () => {
         </div>
 
         {/* Second div */}
-        <div className="p-4">
+        <div className="w-[560px] pt-5 pl-3 pr-3 pb-6">
           <Navbar setActiveTab={setActiveTab} />
           {renderContent()}
         </div>
