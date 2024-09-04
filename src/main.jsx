@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import '../src/StyleWithCss/style.css'
 
 import {
   RouterProvider,
@@ -8,7 +9,7 @@ import {
 import { router } from './Routes/Routes';
 
 createRoot(document.getElementById('root')).render(
-  <div className='bg-[#272C30] container w-full'>
+  <div className='bg-[#272C30] responsive'>
     <StrictMode>
      <RouterProvider router={router} />
    </StrictMode>

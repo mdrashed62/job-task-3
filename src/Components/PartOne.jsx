@@ -23,10 +23,10 @@ const PartOne = () => {
   };
 
   return (
-    <div className="bg-[#363C43] flex items-center text-white rounded-2xl">
+    <div className="bg-[#363C43] flex items-center rounded-2xl">
       <div className="flex w-full">
         {/* First div */}
-        <div className="flex flex-col items-center gap-[100px] w-[50px] mt-4">
+        <div className="flex flex-col items-center gap-[77px] w-[50px] mt-4">
           <div className="ml-[15px]">
           <svg width=" 2em" height="2em">
             <defs>
@@ -50,7 +50,7 @@ const PartOne = () => {
         </div>
 
         {/* Second div */}
-        <div className="w-full p-4">
+        <div className="p-4">
           <Navbar setActiveTab={setActiveTab} />
           {renderContent()}
         </div>

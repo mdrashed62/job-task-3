@@ -1,32 +1,77 @@
+import  { useState } from "react";
 import photo from "../assets/photo.jpeg";
-import '..//StyleWithCss/style.css'
-import { FaArrowLeft } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa6";
-
+import '..//StyleWithCss/style.css';
+import { FaArrowLeft, FaArrowRight, FaRegQuestionCircle } from "react-icons/fa";
 
 const PartTwo = () => {
- 
-  const photos = [photo, photo, photo];
+  // Step 1: Use state to manage the photos array
+  const [photos, setPhotos] = useState([photo, photo, photo]);
+
+  // Step 2: Handle adding a new image
+  const handleAddImage = (event) => {
+    const newImage = URL.createObjectURL(event.target.files[0]);
+    setPhotos([...photos, newImage]);
+  };
 
   return (
-    <div className="mt-10 bg-[#363C43] rounded-2xl">
-     <div className="w-[511px] mx-auto">
-     <div className=" flex justify-between items-center mb-10">
-          <button className="py-4 px-10 rounded-xl mt-6 bg-[#171717] text-white font-semibold">Gallery</button>
-          <div className="flex justify-center items-center gap-8">
-            <button className="p-1 px-4 button shadow-2xl mt-6 rounded-2xl text-white "><span className="text-xl mb-[3px] mr-2">+</span><span className="text-sm">ADD IMAGE</span></button>
-            <div className="text-xl text-[#6F787C] mt-6 flex items-center gap-3">
-            <button className="bg-[#2A2D31] arrowButton rounded-full p-4"><FaArrowLeft/></button>
-            <button className="bg-[#2A2D31] arrowButton rounded-full p-4"><FaArrowRight/></button>
+    <div className="mt-10 bg-[#363C43] flex items-center rounded-2xl">
+      <div className="w-full flex">
+        {/* First Column */}
+        <div className="flex flex-col items-center gap-[77px] w-[50px] mt-6">
+          <div className="ml-[15px]">
+            <svg width="2em" height="2em">
+              <defs>
+                <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop stopColor="#4A4E54" offset="0%" />
+                  <stop stopColor="#A3ADBA" offset="100%" />
+                </linearGradient>
+              </defs>
+              <FaRegQuestionCircle style={{ fill: "url(#icon-gradient)" }} />
+            </svg>
+          </div>
+
+          <div className="grid grid-cols-2 gap-[2px]">
+            {[...Array(6)].map((_, idx) => (
+              <div key={idx} className="w-2 blankDiv h-2 bg-[#4B4F55]"></div>
+            ))}
+          </div>
+        </div>
+        {/* Second Column */}
+        <div className="w-full">
+          <div className="flex justify-between w-[550px] px-4 items-center mb-10">
+            <button className="py-4 px-8 rounded-xl mt-6 bg-[#171717] text-white font-semibold">Gallery</button>
+            <div className="flex justify-center items-center gap-8">
+              <div className="relative">
+                <button className="p-2 px-4 button shadow-2xl mt-6 rounded-2xl text-white">
+                  <span className="text-xl mb-[4px] mr-2">+</span>
+                  <span className="text-[12px]">ADD IMAGE</span>
+                </button>
+                {/* Hidden file input */}
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="absolute inset-0 opacity-0 cursor-pointer"
+                  onChange={handleAddImage}
+                />
+              </div>
+              <div className="text-xl text-[#6F787C] mt-6 flex items-center gap-3">
+                <button className="bg-[#2A2D31] arrowButton rounded-full p-2"><FaArrowLeft /></button>
+                <button className="bg-[#2A2D31] arrowButton rounded-full p-2"><FaArrowRight /></button>
+              </div>
             </div>
           </div>
+          <div className="grid grid-cols-3 px-2">
+            {photos.map((img, index) => (
+              <img
+                className="mb-4 rounded-2xl grayscale-img lg:w-[160px] lg:h-[160px] mx-auto"
+                key={index}
+                src={img}
+                alt={`Photo ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="grid grid-cols-3 gap-4 mx-auto">
-        {photos.map((img, index) => (
-          <img className="mb-4 rounded-2xl grayscale-img w-[160px] h-[160px] mx-auto" key={index} src={img} alt={`Photo ${index + 1}`} />
-        ))}
-      </div>
-     </div>
     </div>
   );
 };
