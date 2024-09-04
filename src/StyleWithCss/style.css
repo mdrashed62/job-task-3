@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+.button {
+    background-color: #40464D;
+    color: white;
+    /* padding: 6px 15px; */
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.4), 
+                0 6px 10px rgba(0, 0, 0, 0.4),  
+                -3px -3px 10px #5c6167, 
+                inset 3px 3px 8px #5c6167; 
+  }
+
+  .arrowButton {
+    box-shadow: 
+      -4px -4px 8px #3C4651,
+      4px 4px 8px rgba(0, 0, 0, 0.4), 
+      inset 4px 4px 8px #3C4651, 
+      inset 4px 4px 8px rgba(0, 0, 0, 0.4); 
+    border-radius: 50%;
+  }
+
+  .grayscale-img {
+    filter: grayscale(100%);
+  }
+
+ .blankDiv {
+  border-radius: 2px;
+ } 
+
+
+/* Import the font */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+/* Button styles */
+.button {
+    background-color: #40464D;
+    color: white;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.4), 
+                0 6px 10px rgba(0, 0, 0, 0.4),  
+                -3px -3px 10px #5c6167, 
+                inset 3px 3px 8px #5c6167; 
+}
+
+/* Arrow button styles */
+.arrowButton {
+    box-shadow: 
+      -4px -4px 8px #3C4651,
+      4px 4px 8px rgba(0, 0, 0, 0.4), 
+      inset 4px 4px 8px #3C4651, 
+      inset 4px 4px 8px rgba(0, 0, 0, 0.4); 
+    border-radius: 50%;
+}
+
+/* Grayscale image styles */
+.grayscale-img {
+    filter: grayscale(100%);
+}
+
+/* Blank div styles */
+.blankDiv {
+    border-radius: 2px;
+}
+
+/* Plus Jakarta Sans font class */
+.plus-jakarta-sans {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400; 
+    font-style: normal;
+}
+
+
+  
+  
